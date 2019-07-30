@@ -11,6 +11,8 @@ public class Main {
         linkList.addHead(3);
         linkList.addHead(4);
         linkList.addHead(5);
+        linkList.addTail(0);
+        linkList.delete(5);
         linkList.display();
     }
 }

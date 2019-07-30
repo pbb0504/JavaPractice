@@ -30,6 +30,21 @@ public class LinkList {
         return obj;
     }
 
+    // 在表尾添加结点
+    public void addTail(Object obj) {
+        Node tail = new Node(obj);
+        Node current = head;// 约等于生成了一个指向head的指针current
+        if (size == 0) head = tail;
+        else if (size == 1) head.next = tail;
+        else {
+            while (current.next!=null){
+                current=current.next;// current后移
+            }
+            current.next=tail;
+            size++;
+        }
+    }
+
     // 在链表头删除元素
     public Object deleteHead() {
         Object obj = head.data;
