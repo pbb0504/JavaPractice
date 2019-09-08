@@ -4,13 +4,30 @@ import java.sql.SQLSyntaxErrorException;
 
 public class Main {
     public static void main(String[] args) {
-
+        threadYield();
     }
     /**
      * 线程的礼让
      */
     private  static  void  threadYield(){
+        // 线程的礼让指的是，正在运行态的线程放弃自己的CPU时间片，由运行态返回就绪态
+        Runnable r=new Runnable() {
+            @Override
+            public void run() {
+                for(int i=0;i<10;i++){
+                    System.out.println(Thread.currentThread().getName()+": "+i);
+                    if(i==3){
+                        Thread.yield();
+                    }
+                }
+            }
+        };
 
+        Thread thread1=new Thread(r,"thread1");
+        Thread thread2=new Thread(r,"thread2");
+
+        thread1.start();
+        thread2.start();
     }
     /**
      *设置线程优先级
