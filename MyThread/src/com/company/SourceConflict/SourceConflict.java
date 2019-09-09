@@ -1,4 +1,4 @@
-package SourceConflict;
+package com.company.SourceConflict;
 
 public class SourceConflict {
     // 四个售票员买票
