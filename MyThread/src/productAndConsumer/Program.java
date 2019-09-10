@@ -17,13 +17,12 @@ public class Program {
      * 消费逻辑：判断是否有足够的产品可以消费
      * 如果可以消费：获取产品，进行消费
      * 不能消费：等待
-     *
      */
     public static void main(String[] args) {
-        ProductPool productPool=new ProductPool(15);
-        Productor productor=new Productor(productPool);
+        ProductPool productPool = new ProductPool(15);
+        Productor productor = new Productor(productPool);
         productor.start();
-        Consumer consumer=new Consumer(productPool);
+        Consumer consumer = new Consumer(productPool);
         consumer.start();
     }
 }
