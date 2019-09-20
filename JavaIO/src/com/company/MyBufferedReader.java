@@ -2,6 +2,7 @@ package com.company;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.concurrent.atomic.AtomicReference;
 
 /*
@@ -21,7 +22,7 @@ public class MyBufferedReader {
     }
 }
 
-class MyReadLine {
+class MyReadLine extends Reader {
     private FileReader r;
 
     MyReadLine(FileReader r) {
@@ -44,6 +45,18 @@ class MyReadLine {
             return sb.toString();
         return null;
     }
+/*
+override close()
+ */
+public void close() throws IOException{
+    r.close();
+}
+/*
+override int read()
+ */
+public int read(char[] cbuf,int off,int len) throws IOException{
+    return r.read(cbuf,off,len);
+}
 
     void myClose() {
         try {
