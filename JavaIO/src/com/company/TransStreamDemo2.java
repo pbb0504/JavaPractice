@@ -1,6 +1,8 @@
 package com.company;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+
 // 现在目的地在文件
 public class TransStreamDemo2 {
     public static void main(String[] args) throws IOException {
@@ -8,7 +10,7 @@ public class TransStreamDemo2 {
     }
     private static void systemToFile() throws IOException{
         BufferedWriter bufferedWriter = new BufferedWriter(
-                new OutputStreamWriter(new FileOutputStream("transToFile.txt")));
+                new OutputStreamWriter(new FileOutputStream("transToFile.txt"), StandardCharsets.UTF_8));
         BufferedReader bufferedReader = new BufferedReader(
                 new InputStreamReader(System.in));
         String line;
