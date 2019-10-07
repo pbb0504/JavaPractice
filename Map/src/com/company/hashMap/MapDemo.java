@@ -1,4 +1,4 @@
-package com.company;
+package com.company.hashMap;
 
 import java.util.Collection;
 import java.util.HashMap;
