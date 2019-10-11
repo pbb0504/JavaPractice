@@ -1,23 +1,26 @@
-package com.company;
+//package com.company;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
 public class UdpRece {
     public static void main(String[] args) throws Exception{
-        // åˆ›å»ºudpçš„socketæœåŠ¡ï¼Œå»ºç«‹ç«¯ç‚¹,ç›‘å¬ä¸€ä¸ªç«¯å£
+        // ´´½¨udpµÄsocket·şÎñ£¬½¨Á¢¶Ëµã,¼àÌıÒ»¸ö¶Ë¿Ú
         DatagramSocket datagramSocket = new DatagramSocket(10000);
-        // å®šä¹‰æ•°æ®åŒ…ï¼Œç”¨äºå­˜å‚¨æ•°æ®
-        byte[] bytes = new byte[1024];
+        // ¶¨ÒåÊı¾İ°ü£¬ÓÃÓÚ´æ´¢Êı¾İ
+		//while(true){
+			byte[] bytes = new byte[1024];
         DatagramPacket datagramPacket = new DatagramPacket(bytes,bytes.length);
-        // é€šè¿‡æœåŠ¡çš„receiveæ–¹æ³•å°†æ”¶åˆ°çš„æ•°æ®å­˜å…¥æ•°æ®åŒ…ä¸­
+        // Í¨¹ı·şÎñµÄreceive·½·¨½«ÊÕµ½µÄÊı¾İ´æÈëÊı¾İ°üÖĞ
         datagramSocket.receive(datagramPacket);
-        //  é€šè¿‡æ•°æ®åŒ…çš„æ–¹æ³•ï¼Œè·å–å…¶ä¸­çš„æ•°æ®
+        //  Í¨¹ıÊı¾İ°üµÄ·½·¨£¬»ñÈ¡ÆäÖĞµÄÊı¾İ
         String ipadd = datagramPacket.getAddress().getHostAddress();
         String data = new String(datagramPacket.getData(),0,datagramPacket.getLength());
         int port = datagramPacket.getPort();
         System.out.println("ip: "+ipadd+"data: "+data+"port: "+port);
-        // å…³é—­èµ„æº
-        datagramSocket.close();
+		//}
+        
+        // ¹Ø±Õ×ÊÔ´
+        //datagramSocket.close();
     }
 }

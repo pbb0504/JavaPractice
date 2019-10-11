@@ -1,4 +1,4 @@
-package com.company;
+//package com.company;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -6,15 +6,20 @@ import java.net.InetAddress;
 
 public class UdpSend {
     public static void main(String[] args) throws Exception{
-        // é€šè¿‡DataGramSocketå¯¹è±¡åˆ›å»ºudpæœåŠ¡
+        // Í¨¹ıDataGramSocket¶ÔÏó´´½¨udp·şÎñ
         DatagramSocket datagramSocket = new DatagramSocket();
-        // ç¡®å®šæ•°æ®ï¼Œå°†æ•°æ®å°è£…åˆ°æ•°æ®åŒ…ä¸­
-        byte[] data = "udp is coming".getBytes();
+        // È·¶¨Êı¾İ£¬½«Êı¾İ·â×°µ½Êı¾İ°üÖĞ
+		int time = 0;
+		while(time <= 50){
+			 byte[] data = "udp is coming".getBytes();
         DatagramPacket datagramPacket = new DatagramPacket(data,data.length,
                 InetAddress.getByName("192.168.2.124"),10000);
-        // å‘é€æ•°æ®åŒ…
+        // ·¢ËÍÊı¾İ°ü
         datagramSocket.send(datagramPacket);
-        // å…³é—­èµ„æº
-        datagramSocket.close();
+		time++;
+		}
+       
+        // ¹Ø±Õ×ÊÔ´
+        //datagramSocket.close();
     }
 }
