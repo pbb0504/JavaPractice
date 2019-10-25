@@ -11,7 +11,8 @@ public class JdbcDemo1 {
         // 2.注册驱动
         Class.forName("com.mysql.cj.jdbc.Driver");
         // 3.获取数据库连接对象
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/yiibaidb", "root", "MySQL0504");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/yiibaidb",
+                "root", "MySQL0504");
         // 4.定义sql语句
         String sql = "select lastName,firstName " +
                 "from employees " +
