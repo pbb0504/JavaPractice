@@ -1,0 +1,23 @@
+<c3p0-config>
+    <default-config>
+    <!-- 连接参数 -->
+        <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/exercise</property>
+        <property name="user">root</property>
+        <property name="password">MySQL0504</property>
+        <!-- 最大的连接数量 -->
+        <property name="maxPoolSize">20</property>
+        <!-- 初始化申请的连接数量 -->
+        <property name="initialPoolSize">5</property>
+        <!-- 响应时间 -->
+        <property name="checkoutTimeout">3000</property>
+        <!--&lt;!&ndash; ����PreparedStatement������ &ndash;&gt;
+        <property name="hibernate.c3p0.max_statements">100</property>
+        &lt;!&ndash; ÿ��120�������ӳ���Ŀ������ӣ���λ����&ndash;&gt;
+        <property name="hibernate.c3p0.idle_test_period">120</property>
+        &lt;!&ndash; �����ӳ���������������ʱ��C3P0һ�»�ȡ���µ������� &ndash;&gt;
+        <property name="hibernate.c3p0.acquire_increment">2</property>
+        &lt;!&ndash; ÿ�ζ���֤�����Ƿ���� &ndash;&gt;
+        <property name="hibernate.c3p0.validate">true</property>-->
+    </default-config>
+</c3p0-config>
