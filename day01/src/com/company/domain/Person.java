@@ -44,4 +44,7 @@ public class Person {
         System.out.println("eating.........");
     }
 
+    public void eat(String name){
+        System.out.println(name + " is eating.............");
+    }
 }
