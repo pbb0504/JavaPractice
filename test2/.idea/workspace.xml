@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eea6ad97-a3e6-434c-9f9a-04a174e3521e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Test01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shuzhileixing/FinalDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shuzhileixing/FloatDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shuzhileixing/LeiXingZhuanHuan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shuzhileixing/StringDemo1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,17 +51,55 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
-  <component name="RunManager" selected="Application.Test03">
-    <configuration name="Test01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test01" />
+  <component name="RunManager" selected="Application.StringDemo1">
+    <configuration name="FinalDemo2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="shuzhileixing.FinalDemo2" />
       <module name="test2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="shuzhileixing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test02" />
+    <configuration name="FloatDemo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="shuzhileixing.FloatDemo1" />
       <module name="test2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="shuzhileixing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LeiXingZhuanHuan" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="shuzhileixing.LeiXingZhuanHuan" />
+      <module name="test2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="shuzhileixing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringDemo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="shuzhileixing.StringDemo1" />
+      <module name="test2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="shuzhileixing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -74,9 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StringDemo1" />
+        <item itemvalue="Application.LeiXingZhuanHuan" />
+        <item itemvalue="Application.FinalDemo2" />
+        <item itemvalue="Application.FloatDemo1" />
         <item itemvalue="Application.Test03" />
-        <item itemvalue="Application.Test02" />
-        <item itemvalue="Application.Test01" />
       </list>
     </recent_temporary>
   </component>
@@ -106,6 +147,8 @@
       <workItem from="1577151607761" duration="1602000" />
       <workItem from="1577598521786" duration="266000" />
       <workItem from="1579181494836" duration="175000" />
+      <workItem from="1580184634902" duration="900000" />
+      <workItem from="1580185655730" duration="2487000" />
     </task>
     <servers />
   </component>
@@ -117,25 +160,29 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="26" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1577151622308" />
+    <state x="295" y="0" key="CommitChangelistDialog2" timestamp="1580188580934">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="295" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580188580934" />
     <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1579181666696">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1579181666696" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1577598789737">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1580188580981">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577598789737" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1577598789737">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580188580981" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1580188580981">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577598789737" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1577598789736">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580188580981" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1580188580981">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577598789736" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1577598789737">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580188580981" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1580188580981">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577598789737" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580188580981" />
   </component>
 </project>
