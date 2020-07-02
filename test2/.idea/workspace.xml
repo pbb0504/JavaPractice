@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eea6ad97-a3e6-434c-9f9a-04a174e3521e" name="Default Changelist" comment="......">
+      <change afterPath="$PROJECT_DIR$/../servlet02/src/cn/pbb/web/servlet/ServletDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servlet02/src/cn/pbb/web/servlet/ServletDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servlet02/web/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +26,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\maven\mavenRepo" />
-        <option name="mavenHome" value="D:/maven/apache-maven-3.6.2" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../maven/apache-maven-3.6.2" />
         <option name="userSettingsFile" value="D:\maven\apache-maven-3.6.2\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -34,7 +37,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -45,9 +47,9 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="Application.TimerDemo1">
+  <component name="RunManager" selected="Application.InterfaceDemo1">
     <configuration name="Input" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="inAndOut.Input" />
       <module name="test2" />
@@ -115,25 +117,13 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TimerDemo1" />
         <item itemvalue="Application.InterfaceDemo1" />
+        <item itemvalue="Application.TimerDemo1" />
         <item itemvalue="Application.Input" />
         <item itemvalue="Application.StringDemo1" />
         <item itemvalue="Application.LeiXingZhuanHuan" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -151,48 +141,38 @@
       <workItem from="1579181494836" duration="175000" />
       <workItem from="1580184634902" duration="900000" />
       <workItem from="1580185655730" duration="7910000" />
+      <workItem from="1580348371107" duration="16000" />
+      <workItem from="1593583090293" duration="329000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="......" />
     <option name="LAST_COMMIT_MESSAGE" value="......" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="26" key="#Project_Structure" timestamp="1577151622308">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1593583423375">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="26" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1577151622308" />
-    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1580197178684">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593583423375" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1593583423374">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1580197178684" />
-    <state x="295" y="0" key="CommitChangelistDialog2" timestamp="1580188580934">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593583423374" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1593583423374">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="295" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580188580934" />
-    <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1579181666696">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593583423374" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1593583423375">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1579181666696" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1580198916012">
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593583423375" />
+    <state x="184" y="8" key="SettingsEditor" timestamp="1593583117989">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580198916012" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1580198916012">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580198916012" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1580198916012">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580198916012" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1580198916012">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580198916012" />
+    <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1593583117989" />
   </component>
 </project>

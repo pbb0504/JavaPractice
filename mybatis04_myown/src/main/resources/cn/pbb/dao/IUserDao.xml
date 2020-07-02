@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<mapper namespace="cn.pbb.dao.IUserDao">
+<!--    配置查询所有-->
+    <select id="findAll" resultType="cn.pbb.domain.User">
+        select * from user
+    </select>
+</mapper>
