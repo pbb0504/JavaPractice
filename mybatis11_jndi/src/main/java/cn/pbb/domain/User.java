@@ -4,7 +4,6 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @author: pbb
@@ -17,7 +16,15 @@ public class User implements Serializable {
     private String address;
     private String sex;
     private Date birthday;
-    private List<Account> accounts;
 
-    // 一对多映射：主表实体应该包括从表实体的集合引用
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", address='" + address + '\'' +
+                ", sex='" + sex + '\'' +
+                ", birthday=" + birthday +
+                '}';
+    }
 }

@@ -3,8 +3,20 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.pbb.dao.IAccountDao">
-    <select id="findAll" resultType="account">
-        select * from account;
+    <resultMap id="accountUserMap" type="account">
+        <id property="id" column="id"/>
+        <result property="uid" column="uid"/>
+        <result property="money" column="money"/>
+        <association property="user" column="uid">
+            <id property="id" column="id"/>
+            <result property="username" column="username"/>
+            <result property="address" column="address"/>
+            <result property="sex" column="sex"/>
+            <result property="birthday" column="birthday"/>
+        </association>
+    </resultMap>
+    <select id="findAll" resultMap="accountUserMap">
+        select * from user,account where user.id=account.uid;
     </select>
     <select id="findAllAccount" resultType="AccountUser">
         select user.username,user.address from user,account where user.id = account.uid;

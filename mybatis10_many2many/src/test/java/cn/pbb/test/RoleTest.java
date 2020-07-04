@@ -1,9 +1,8 @@
 package cn.pbb.test;
 
-import cn.pbb.dao.IAccountDao;
+import cn.pbb.dao.IRoleDao;
 import cn.pbb.dao.IUserDao;
-import cn.pbb.domain.Account;
-import cn.pbb.domain.AccountUser;
+import cn.pbb.domain.Role;
 import cn.pbb.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -20,10 +19,10 @@ import java.util.List;
  * @author: pbb
  * @date: 2020/7/2 21:40
  */
-public class AccountTest {
+public class RoleTest {
     private InputStream inputStream;
     private SqlSession sqlSession;
-    private IAccountDao iAccountDao;
+    private IRoleDao iRoleDao;
 
     /**
      * 初始化方法
@@ -35,7 +34,7 @@ public class AccountTest {
         try {
             inputStream = Resources.getResourceAsStream("SqlMapConfig.xml");
             sqlSession = new SqlSessionFactoryBuilder().build(inputStream).openSession(true);
-            iAccountDao = sqlSession.getMapper(IAccountDao.class);
+            iRoleDao = sqlSession.getMapper(IRoleDao.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -61,25 +60,15 @@ public class AccountTest {
     }
 
     /**
-     * 测试查询所有
+     * 每个角色的信息
      */
     @Test
     public void testFindAll() {
-        List<Account> accounts = iAccountDao.findAll();
-        for (Account account : accounts) {
-            System.out.println(account);
-            System.out.println(account.getUser());
+        List<Role> roles = iRoleDao.findAll();
+        for (Role role : roles) {
+            System.out.println(role);
+            System.out.println(role.getUsers());
         }
     }
 
-    /**
-     * 测试查询所有
-     */
-    @Test
-    public void testFindAllAccount() {
-        List<AccountUser> accounts = iAccountDao.findAllAccount();
-        for (AccountUser account : accounts) {
-            System.out.println(account);
-        }
-    }
 }

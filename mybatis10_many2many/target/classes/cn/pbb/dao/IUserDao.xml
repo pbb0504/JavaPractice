@@ -10,17 +10,16 @@
         <result property="address" column="address"/>
         <result property="sex" column="sex"/>
         <result property="birthday" column="birthday"/>
-        <collection property="accounts" ofType="account">
-            <id property="id" column="aid"/>
-            <result property="uid" column="uid"/>
-            <result property="money" column="money"/>
+        <collection property="roles" ofType="role">
+            <id property="roleId" column="rid"/>
+            <result property="roleName" column="role_name"/>
+            <result property="roleDesc" column="role_desc"/>
         </collection>
     </resultMap>
     <select id="findAll" resultMap="userAndAccount">
-        select * from user u left outer join account a on u.id = a.UID;
+        select u.*,r.id as rid,r.role_name,r.role_desc from user u
+        left outer join user_role ur on u.id=ur.uid
+        left outer join role r on r.id=ur.rid;
     </select>
 
-    <select id="findById" parameterType="Integer" resultType="cn.pbb.domain.User">
-        select * from user where id=#{id};
-    </select>
 </mapper>

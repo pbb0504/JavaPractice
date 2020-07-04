@@ -14,13 +14,4 @@ public interface IUserDao {
      * @return list<user>
      */
     List<User> findAll();
-
-    /**
-     * 根据用户id查找用户
-     * @param userId
-     * @return
-     */
-    User findById(Integer userId);
-
-
 }

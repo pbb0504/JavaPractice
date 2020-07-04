@@ -17,7 +17,7 @@ public class User implements Serializable {
     private String address;
     private String sex;
     private Date birthday;
-    private List<Account> accounts;
 
     // 一对多映射：主表实体应该包括从表实体的集合引用
+    private List<Role> roles;
 }

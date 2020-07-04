@@ -1,9 +1,6 @@
 package cn.pbb.test;
 
-import cn.pbb.dao.IAccountDao;
 import cn.pbb.dao.IUserDao;
-import cn.pbb.domain.Account;
-import cn.pbb.domain.AccountUser;
 import cn.pbb.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -20,10 +17,10 @@ import java.util.List;
  * @author: pbb
  * @date: 2020/7/2 21:40
  */
-public class AccountTest {
+public class UserTest {
     private InputStream inputStream;
     private SqlSession sqlSession;
-    private IAccountDao iAccountDao;
+    private IUserDao iUserDao;
 
     /**
      * 初始化方法
@@ -35,7 +32,7 @@ public class AccountTest {
         try {
             inputStream = Resources.getResourceAsStream("SqlMapConfig.xml");
             sqlSession = new SqlSessionFactoryBuilder().build(inputStream).openSession(true);
-            iAccountDao = sqlSession.getMapper(IAccountDao.class);
+            iUserDao = sqlSession.getMapper(IUserDao.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,21 +62,11 @@ public class AccountTest {
      */
     @Test
     public void testFindAll() {
-        List<Account> accounts = iAccountDao.findAll();
-        for (Account account : accounts) {
-            System.out.println(account);
-            System.out.println(account.getUser());
+        List<User> users = iUserDao.findAll();
+        for (User user : users) {
+            System.out.println(user);
+            System.out.println(user.getRoles());
         }
     }
 
-    /**
-     * 测试查询所有
-     */
-    @Test
-    public void testFindAllAccount() {
-        List<AccountUser> accounts = iAccountDao.findAllAccount();
-        for (AccountUser account : accounts) {
-            System.out.println(account);
-        }
-    }
 }

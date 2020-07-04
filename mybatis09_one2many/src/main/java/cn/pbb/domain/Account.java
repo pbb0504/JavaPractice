@@ -10,7 +10,9 @@ import java.io.Serializable;
  */
 @Data
 public class Account implements Serializable {
+    // 从表实体应该包含一个主表实体的对象引用
     private Integer id;
     private Integer uid;
     private Integer money;
+    private User user;
 }
