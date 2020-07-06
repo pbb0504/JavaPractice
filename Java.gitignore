@@ -26,4 +26,6 @@ hs_err_pid*
 *.iml
 *.mp3
 *.part
+target
+
 
