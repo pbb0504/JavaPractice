@@ -2,6 +2,9 @@ package cn.pbb.factory;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -21,6 +24,8 @@ import java.util.Properties;
 public class BeanFactory {
     // 定义一个properties对象
     private static Properties properties;
+    // 定义一个Map，用于存放我们要存放的对象，把它称之为容器
+    private static Map<String, Object> beans;
 
     // 使用静态代码块为properties赋值
     static {
@@ -30,8 +35,27 @@ public class BeanFactory {
             // 获取properties文件的流对象
             InputStream inputStream = BeanFactory.class.getClassLoader().getResourceAsStream("bean.properties");
             properties.load(inputStream);
+            // 实例化容器
+            beans = new HashMap<String, Object>();
+            // 取出配置文件中所有的key
+            Enumeration keys = properties.keys();
+            // 遍历枚举
+            while (keys.hasMoreElements()) {
+                String key = keys.nextElement().toString();
+                // 根据key获取value;
+                String beanPath = (String) properties.get(key);
+                Object value = Class.forName(beanPath).newInstance();
+                // 这里已经根据不同的beanPath存好了对象
+                beans.put(key, value);
+            }
         } catch (IOException e) {
-           throw new ExceptionInInitializerError("初始化properties失败");
+            throw new ExceptionInInitializerError("初始化properties失败");
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
     }
 
@@ -41,9 +65,23 @@ public class BeanFactory {
      * @return
      */
     public static Object getBean(String beanName) {
+        return beans.get(beanName);
+    }
+
+
+
+
+    /**
+     * 根据bean的名称获取bean对象
+     *
+     * @param beanName
+     * @return
+     */
+   /* public static Object getBean(String beanName) {
         Object bean = null;
         try {
             String beanPath = properties.getProperty(beanName);
+            // 每次调用默认构造函数创建对象
             bean = Class.forName(beanPath).newInstance();
         } catch (InstantiationException e) {
             e.printStackTrace();
@@ -53,5 +91,5 @@ public class BeanFactory {
             e.printStackTrace();
         }
         return bean;
-    }
+    }*/
 }

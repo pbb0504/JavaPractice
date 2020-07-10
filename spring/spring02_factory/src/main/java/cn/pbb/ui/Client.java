@@ -11,7 +11,10 @@ import cn.pbb.service.impl.AccountServiceImpl;
  */
 public class Client {
     public static void main(String[] args) {
-        IAccountService iAccountService = (IAccountService) BeanFactory.getBean("accountService");
-        iAccountService.saveAccount();
+        for(int i =0; i < 5; i++){
+            IAccountService iAccountService = (IAccountService) BeanFactory.getBean("accountService");
+            System.out.println(iAccountService);
+        }
+        //iAccountService.saveAccount();
     }
 }

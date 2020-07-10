@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    spring中的依赖注入
+            依赖注入：
+                dependency injection
+
+                IOC的作用：降低程序的耦合
+                依赖关系的管理：交给spring来维护
+
+                依赖关系的维护：
+                    就称之为依赖注入
+
+                 依赖注入：
+                    能注入的数据有三类
+                        1. 基本类型和String
+                        2. 其他bean类型（在配置文件中或者注解配置过的bean）
+                        3. 复杂类型/集合类型
+
+                    注入的方式有三种
+                        1. 使用构造函数提供
+                        2. 使用set方法提供
+                        3. 使用注解提供
+    -->
+
+    <!--    使用构造函数注入
+            使用的标签：constructor-arg
+            标签出现的位置:bean标签内部
+            标签中的属性
+                   index:用于指定要注入的数据给构造函数中指定索引位置的参数。从0开始
+                   name:用于指定给构造函数中指定名称的参数赋值
+                   type:用于指定要注入的数据的数据类型，该数据类型也是构造函数中某个或某些参数的类型
+                ==========================以上用于指定给构造函数中哪个参数赋值==============================
+                   ref:引用关联的bean对象,在Ioc核心容器中出现过的bean对象
+                   value:用于基本类型和String类型的数据
+
+             优势：在获取bean对象时，注入数据时必须的操作，否则对象无法创建成功
+             弊端：改变了bean对象的实例化方式，在创建对象时，如果用不到这些数据也必须提供
+
+    -->
+
+    <bean id="accountService" class="cn.pbb.service.impl.AccountServiceImpl">
+        <constructor-arg name="name" value="test"/>
+        <constructor-arg name="age" value="18"/>
+        <constructor-arg name="birthday" ref="now"/>
+    </bean>
+
+    <!--    配置一个日期对象-->
+    <bean id="now" class="java.util.Date"/>
+
+
+    <!--    set方法注入
+            标签：property
+            位置: bean标签的内部
+            标签中的属性
+                       name:指定注入时所调用的set方法
+                       ref:引用关联的bean对象,在Ioc核心容器中出现过的bean对象
+                       value:用于基本类型和String类型的数据
+
+             优势：在创建对象时，没有明确限制，可以直接使用默认构造函数
+             弊端：如果有某个成员必须有值，则获取对象时有可能set方法无法保证一定注入
+    -->
+    <bean id="accountService2" class="cn.pbb.service.impl.AccountServiceImpl2">
+        <property name="name" value="zhangshang"/>
+        <property name="age" value="20"/>
+        <property name="birthday" ref="now"/>
+    </bean>
+
+
+<!--    复杂类型的注入
+        用于给list结构集合注入的标签
+        list,array,set
+        用于给map结构集合注入的标签
+        map,props
+
+        总结：结构相同，标签可以互换
+-->
+
+    <bean id="accountService3" class="cn.pbb.service.impl.AccountServiceImpl3">
+        <property name="myStrs">
+            <array>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </array>
+        </property>
+        <property name="myList">
+            <list>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </list>
+        </property>
+        <property name="mySet">
+            <set>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </set>
+        </property>
+        <property name="myMap">
+            <map>
+                <entry key="testA" value="aaa"/>
+                <entry key="testB">
+                    <value>bbb</value>
+                </entry>
+                <entry key="testC">
+                    <value>ccc</value>
+                </entry>
+            </map>
+        </property>
+        <property name="myProps">
+            <props>
+                <prop key="testA">aaa</prop>
+                <prop key="testB">bbb</prop>
+                <prop key="testC">ccc</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
