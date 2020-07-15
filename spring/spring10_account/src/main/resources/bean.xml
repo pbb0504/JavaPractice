@@ -3,10 +3,19 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="proxyAccountService" factory-bean="beanFactory" factory-method="getiAccountService">
+
+    </bean>
+
+    <bean id="beanFactory" class="cn.pbb.factory.BeanFactory">
+        <property name="iAccountService" ref="accountService"/>
+        <property name="transactionManager" ref="transactionManager"/>
+    </bean>
+
     <!--业务层-->
     <bean id="accountService" class="cn.pbb.service.impl.AccountServiceImpl">
         <property name="iAccountDao" ref="accountDao"/>
-        <property name="transactionManager" ref="transactionManager"/>
     </bean>
 
     <!--    持久层-->
