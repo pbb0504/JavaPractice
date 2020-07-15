@@ -27,33 +27,37 @@ public class BeanFactory {
     /**
      * get proxy object
      * 以后所有spring自动生成的accountService都经过此增强
+     *
      * @return
      */
     public IAccountService getiAccountService() {
-        iAccountService = (IAccountService) Proxy.newProxyInstance(iAccountService.getClass().getClassLoader(),
+        return (IAccountService) Proxy.newProxyInstance(iAccountService.getClass().getClassLoader(),
                 iAccountService.getClass().getInterfaces(),
-                (proxy, method, args) -> {
-                    Object res;
-                    try {
-                        // open transaction
-                        transactionManager.beginTransaction();
-                        // execute transaction
-                        // 执行accountService接口中的方法
-                        res = method.invoke(iAccountService, args);
-                        // commit
-                        transactionManager.commit();
-                        // return result
-                        return res;
-                    } catch (Exception e) {
-                        transactionManager.rollback();
-                        e.printStackTrace();
-                        // rollback
-                    } finally {
-                        // close
-                        transactionManager.release();
+                new InvocationHandler() {
+                    @Override
+                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                        Object res;
+                        try {
+                            // open transaction
+                            transactionManager.beginTransaction();
+                            // execute transaction
+                            // 执行accountService接口中的方法
+                            res = method.invoke(iAccountService, args);
+                            // commit
+                            transactionManager.commit();
+                            // return result
+                            return res;
+                        } catch (Exception e) {
+                            transactionManager.rollback();
+                            e.printStackTrace();
+                            // rollback
+                        } finally {
+                            // close
+                            transactionManager.release();
+                        }
+                        return null;
                     }
-                    return null;
                 });
-        return iAccountService;
     }
 }
+
