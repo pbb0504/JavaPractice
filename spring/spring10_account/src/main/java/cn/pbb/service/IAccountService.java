@@ -47,4 +47,9 @@ public interface IAccountService {
      * @param money how much
      */
     void transfer(String sourceName, String targetName, Float money);
+
+    /**
+     * test
+     */
+    void test();
 }

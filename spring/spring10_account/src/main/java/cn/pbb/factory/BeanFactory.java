@@ -34,25 +34,38 @@ public class BeanFactory {
         return (IAccountService) Proxy.newProxyInstance(iAccountService.getClass().getClassLoader(),
                 iAccountService.getClass().getInterfaces(),
                 new InvocationHandler() {
+                    /**
+                     * 环绕通知
+                     * 在环绕通知中有明确的切入点方法调用
+                     * @param proxy
+                     * @param method
+                     * @param args
+                     * @return
+                     * @throws Throwable
+                     */
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                        if("test".equals(method.getName())){
+                           return method.invoke(iAccountService,args);
+                        }
                         Object res;
                         try {
-                            // open transaction
+                            // open transaction   前置通知
                             transactionManager.beginTransaction();
                             // execute transaction
                             // 执行accountService接口中的方法
                             res = method.invoke(iAccountService, args);
-                            // commit
+                            // commit   后置通知
                             transactionManager.commit();
                             // return result
                             return res;
                         } catch (Exception e) {
+                            // 异常通知
                             transactionManager.rollback();
                             e.printStackTrace();
                             // rollback
                         } finally {
-                            // close
+                            // close   最终通知
                             transactionManager.release();
                         }
                         return null;
