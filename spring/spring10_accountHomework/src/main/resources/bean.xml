@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:context="http://www.springframework.org/schema/context"
+              xmlns:aop="http://www.springframework.org/schema/aop"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans.xsd
+               http://www.springframework.org/schema/context
+                http://www.springframework.org/schema/context/spring-context.xsd
+                http://www.springframework.org/schema/aop
+                http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+        <!--业务层-->
+    <bean id="accountService" class="cn.pbb.service.impl.AccountServiceImpl">
+        <property name="iAccountDao" ref="accountDao"/>
+    </bean>
+
+    <!--    持久层-->
+    <bean id="accountDao" class="cn.pbb.dao.impl.AccountDaoImpl">
+        <property name="runner" ref="runner"/>
+        <property name="connectionUtils" ref="connectionUtils"/>
+    </bean>
+
+    <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype">
+        <!--        &lt;!&ndash;        注入数据源&ndash;&gt;-->
+        <!--        <constructor-arg name="ds" ref="dataSource"/>-->
+    </bean>
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/db1?useSSL=false"/>
+        <property name="user" value="root"/>
+        <property name="password" value="mysql0504"/>
+    </bean>
+
+    <!--connectionUtils-->
+    <bean id="connectionUtils" class="cn.pbb.utils.ConnectionUtils">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--TransactionManager-->
+    <bean id="transactionManager" class="cn.pbb.utils.TransactionManager">
+        <property name="connectionUtils" ref="connectionUtils"/>
+    </bean>
+
+
+    <aop:config>
+        <aop:aspect id="bf" ref="transactionManager">
+            <aop:pointcut id="pt1" expression="execution(* cn.pbb.service.impl.*.*(..))"/>
+            <aop:before method="beginTransaction" pointcut-ref="pt1"/>
+            <aop:after method="release" pointcut-ref="pt1"/>
+            <aop:after-throwing method="rollback" pointcut-ref="pt1"/>
+            <aop:after-returning method="commit" pointcut-ref="pt1"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
