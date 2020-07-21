@@ -31,6 +31,7 @@ public class DefaultSqlSession implements SqlSession {
      * @param <T>
      * @return
      */
+    @Override
     public <T> T getMapper(Class<T> daoInterfaceClass) {
         return (T) Proxy.newProxyInstance(daoInterfaceClass.getClassLoader(),
                 new Class[]{daoInterfaceClass},
@@ -40,6 +41,7 @@ public class DefaultSqlSession implements SqlSession {
     /**
      * 用于释放资源
      */
+    @Override
     public void close() {
         if (connection != null) {
             try {

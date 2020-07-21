@@ -17,6 +17,7 @@ public class UserDaoImpl implements IUserDao {
         this.factory = factory;
     }
 
+    @Override
     public List<User> findAll() {
         SqlSession session = factory.openSession();
         List<User> users = session.selectList("cn.pbb.dao.IUserDao.findAll");

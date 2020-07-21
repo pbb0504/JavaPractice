@@ -20,6 +20,7 @@ public class DefaultSqlSessionFactory implements SqlSessionFactory {
      * 创建一个新的操作数据库对象
      * @return
      */
+    @Override
     public SqlSession openSession() {
         return new DefaultSqlSession(cfg);
     }
