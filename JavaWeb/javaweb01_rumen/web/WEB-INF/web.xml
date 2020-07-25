@@ -19,6 +19,13 @@
     <servlet>
         <servlet-name>demo2</servlet-name>
         <servlet-class>cn.pbb.web.servlet.ServletDemo2</servlet-class>
+<!--        指定Servlet的创建时机
+            1. 第一次被访问时创建
+                * <load-on-startup> 值为复数
+            2. 在服务器启动时创建
+                * <load-on-startup>的值为0或正整数
+-->
+        <load-on-startup>5</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>demo2</servlet-name>
