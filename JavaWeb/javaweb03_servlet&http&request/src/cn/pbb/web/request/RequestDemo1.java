@@ -30,18 +30,25 @@ public class RequestDemo1 extends HttpServlet {
         8. 获取客户机的IP地址 `String getRemoteAddr()`*/
         String method = req.getMethod();
         System.out.println(method);
+
         String contextPath = req.getContextPath();
         System.out.println(contextPath);
+
         String servletPath = req.getServletPath();
         System.out.println(servletPath);
+
         String queryString = req.getQueryString();
         System.out.println(queryString);
+
         String requestURI = req.getRequestURI();
         System.out.println(requestURI);
+
         StringBuffer requestURL = req.getRequestURL();
         System.out.println(requestURL);
+
         String protocol = req.getProtocol();
         System.out.println(protocol);
+
         String remoteAddr = req.getRemoteAddr();
         System.out.println(remoteAddr);
     }
