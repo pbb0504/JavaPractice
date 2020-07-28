@@ -23,7 +23,11 @@ public class RequestDemo4 extends HttpServlet {
         if (header != null) {
             if (header.contains("login.html")) {
                 System.out.println("正常访问");
+                resp.setContentType("text/html;charset=utf-8");
+                resp.getWriter().write("正常访问");
             } else {
+                resp.setContentType("text/html;charset=utf-8");
+                resp.getWriter().write("正常访问");
                 System.out.println("非正常访问");
             }
         }
