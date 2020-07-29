@@ -6,23 +6,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Enumeration;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * @author: pbb
  * @date: 2020/7/26 22:07
  */
-@WebServlet("/requestDemo7")
-public class RequestDemo7 extends HttpServlet {
+@WebServlet("/requestDemo9")
+public class RequestDemo9 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // 设置流的编码
-        req.setCharacterEncoding("utf-8");
-        String username = req.getParameter("username");
-        System.out.println(username);
+        System.out.println("demo9------------");
     }
 
     @Override
