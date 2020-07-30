@@ -17,6 +17,7 @@ public class RequestDemo8 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("demo8------------");
+        req.setAttribute("msg","hello");
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/requestDemo9");
         requestDispatcher.forward(req,resp);
     }
