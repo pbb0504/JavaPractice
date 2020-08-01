@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            let img = document.getElementById("checkCode");
+            img.onclick = function () {
+                let date = new Date().getTime();
+                img.src = "/responseDemo5?" + date;
+            }
+
+            let link = document.getElementById("changeImg");
+            link.onclick = function () {
+                let date = new Date().getTime();
+                img.src = "/responseDemo5?" + date;
+            }
+        }
+    </script>
+</head>
+<body>
+<img id="checkCode" src="/responseDemo5"/>
+<a id="changeImg" href="">change</a>
+</body>
+</html>
