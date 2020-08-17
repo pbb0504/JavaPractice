@@ -2,26 +2,28 @@
  * @author: pbb
  * @date: 2020/8/17 12:51
  */
-public class Demo3 {
+public class Demo4 {
 }
 
-interface IOpenAndClass {
-    public void open();
+interface Interface1 {
+    void open();
+    void setTV(TV tv);
 }
 
-interface ITV {
-    public void play();
+interface TV {
+    void play();
 }
 
-class OpenAndClass implements IOpenAndClass{
-    private ITV itv;
-    // 通过构造函数传入实现类
-    OpenAndClass(ITV itv){
-        this.itv = itv;
-    }
+class OpenAndPlay implements Interface1{
+    private TV tv;
 
     @Override
     public void open() {
-        this.itv.play();
+        this.tv.play();
+    }
+
+    @Override
+    public void setTV(TV tv) {
+        this.tv = tv;
     }
 }
