@@ -1,0 +1,8 @@
+@startuml
+class Demo2{
+id Integer
+name String
+getName() String
+setName(String name) void
+}
+@enduml
