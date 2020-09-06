@@ -4,7 +4,7 @@
  */
 public class Main {
     public static void main(String[] args) {
-        PizzaDian pizzaDian = new PizzaDian(new SimplePizzaFactory());
-        pizzaDian.orderPizza("cheese");
+
+
     }
 }

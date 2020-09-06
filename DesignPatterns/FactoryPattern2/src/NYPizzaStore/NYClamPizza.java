@@ -1,8 +1,12 @@
+package NYPizzaStore;
+
+import PizzaStore.Pizza;
+
 /**
  * @author: pbb
- * @date: 2020/9/5 22:18
+ * @date: 2020/9/5 22:19
  */
-public class PepperoniPizza extends Pizza{
+public class NYClamPizza extends Pizza {
     @Override
     public void prepare() {
         super.prepare();

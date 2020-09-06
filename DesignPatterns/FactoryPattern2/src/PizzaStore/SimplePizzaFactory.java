@@ -1,10 +1,12 @@
+package PizzaStore;
+
 /**
  * @author: pbb
  * @date: 2020/9/5 21:37
  */
 public class SimplePizzaFactory {
     public Pizza createPizza(String type){
-        Pizza pizza = null;
+       /* Pizza pizza = null;
         if(type.equals("cheese")){
             pizza = new CheesePizza();
         }else if(type.equals("pepperoni")){
@@ -14,6 +16,7 @@ public class SimplePizzaFactory {
         }else if(type.equals("veggie")){
             pizza = new VeggiePizza();
         }
-        return pizza;
+        return pizza;*/
+        return null;
     }
 }
