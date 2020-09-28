@@ -6,6 +6,11 @@ package PizzaStore;
  */
 public abstract class PizzaStore {
 
+    /**
+     * 制作pizza
+     * @param type pizza类型
+     * @return pizza
+     */
     public Pizza orderPizza(String type) {
         Pizza pizza;
         pizza = createPizza(type);
@@ -16,5 +21,10 @@ public abstract class PizzaStore {
         return pizza;
     }
 
+    /**
+     * 创建pizza
+     * @param type pizza类型
+     * @return pizza
+     */
     abstract Pizza createPizza(String type);
 }

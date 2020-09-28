@@ -11,7 +11,7 @@ import ABPizzaStore.ABVeggiePizza;
  */
 public class PizzaStore1 extends PizzaStore{
     @Override
-    Pizza createPizza(String type) {
+    public Pizza createPizza(String type) {
         Pizza pizza = null;
         if(type.equals("cheese")){
             pizza = new ABCheesePizza();
