@@ -1,40 +1,42 @@
-import basematrial.*;
+package cn.pbb.abstractPizza;
+
+import cn.pbb.basematrial.*;
 
 /**
  * @author: pbb
  * @date: 2020/9/30 15:03
  */
 public abstract class Pizza {
-    String name;
-    Cheese cheese;
-    Clams clams;
-    Dough dough;
-    Pepperoni pepperoni;
-    Sauce sauce;
-    Veggies veggies;
+    public String name;
+    public Cheese cheese;
+    public Clams clams;
+    public Dough dough;
+    public Pepperoni pepperoni;
+    public Sauce sauce;
+    public Veggies veggies;
 
     /**
-     * prepare
+     * add base material
      */
-    abstract void prepare();
+    public abstract void prepare();
 
-    void bake(){
+    public void bake(){
         System.out.println("bake............");
     }
 
-    void cut(){
+    public void cut(){
         System.out.println("cut....................");
     }
 
-    void box(){
+    public void box(){
         System.out.println("box....................");
     }
 
-    void setName(String name){
+    public void setName(String name){
         this.name = name;
     }
 
-    String getName(){
+    public String getName(){
         return name;
     }
 

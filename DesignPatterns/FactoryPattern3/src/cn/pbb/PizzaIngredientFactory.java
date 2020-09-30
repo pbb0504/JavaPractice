@@ -1,4 +1,6 @@
-import basematrial.*;
+package cn.pbb;
+
+import cn.pbb.basematrial.*;
 
 /**
  * @author 13053

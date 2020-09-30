@@ -1,11 +1,11 @@
-package basematrial;
+package cn.pbb.basematrial;
 
 /**
  * @author: pbb
  * @date: 2020/9/30 15:11
  */
 public class Clams {
-    Clams(){
+    public Clams(){
         System.out.println("adding clams");
     }
 }

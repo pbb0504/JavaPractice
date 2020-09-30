@@ -1,4 +1,4 @@
-package basematrial;
+package cn.pbb.basematrial;
 
 /**
  * @author: pbb
