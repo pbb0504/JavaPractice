@@ -7,6 +7,6 @@ import PizzaStore.PizzaStore1;
 public class Main {
     public static void main(String[] args) {
         PizzaStore1 pizzaStore1 = new PizzaStore1();
-        pizzaStore1.createPizza("cheese");
+        pizzaStore1.orderPizza("cheese");
     }
 }
