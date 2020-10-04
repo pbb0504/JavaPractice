@@ -4,10 +4,16 @@
  */
 public class SimpleRemoteControl {
     Command command;
-    SimpleRemoteControl(Command command){
+
+    SimpleRemoteControl(Command command) {
         this.command = command;
     }
-    public void buttonWasPressed(){
+
+    public void setCommand(Command command) {
+        this.command = command;
+    }
+
+    public void buttonWasPressed() {
         command.execute();
     }
 }
