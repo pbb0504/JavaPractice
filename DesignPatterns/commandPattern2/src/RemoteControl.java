@@ -8,9 +8,8 @@ public class RemoteControl {
     Command[] onCommands;
     Command[] offCommands;
     Command undoCommand;
-    int commandSize = 7;
 
-    public RemoteControl() {
+    public RemoteControl(int commandSize) {
         onCommands = new Command[commandSize];
         offCommands = new Command[commandSize];
         Command noCommand = new NoCommand();
@@ -46,7 +45,6 @@ public class RemoteControl {
                 "onCommands=" + Arrays.toString(onCommands) +
                 ", offCommands=" + Arrays.toString(offCommands) +
                 ", undoCommand=" + undoCommand +
-                ", commandSize=" + commandSize +
                 '}';
     }
 }

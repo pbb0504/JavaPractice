@@ -7,7 +7,7 @@ public class RemoteControlTest {
         Light light = new Light();
         LightOnCommand onCommand = new LightOnCommand(light);
         LightOffCommand offCommand = new LightOffCommand(light);
-        RemoteControl control = new RemoteControl();
+        RemoteControl control = new RemoteControl(2);
         control.setCommands(0,onCommand,offCommand);
         control.onButtonWasPushed(0);
         control.offButtonWasPushed(0);
