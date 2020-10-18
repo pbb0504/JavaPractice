@@ -14,11 +14,8 @@ public class Test01 {
             }
             fileOutputStream.write(bytes,0,4);
             fileOutputStream.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
