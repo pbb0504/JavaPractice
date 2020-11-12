@@ -6,4 +6,8 @@
     <select id="findAll" resultType="cn.pbb.domain.User">
         select * from user
     </select>
+
+    <select id="findByName" resultType="cn.pbb.domain.User" parameterType="String">
+        select * from user where username like #{username};
+    </select>
 </mapper>
