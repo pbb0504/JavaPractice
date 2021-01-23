@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="utf-8">
+    <title>Layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--    <link rel="stylesheet" href="//res.layui.com/layui/dist/css/layui.css"  media="all">-->
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+</head>
+<body>
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>卡片面板</legend>
+</fieldset>
+
+<div style="padding: 20px; background-color: #F2F2F2;">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    主页
+                </div>
+                <div class="layui-card-body">
+                    <button type="button" class="layui-btn layui-btn-primary">
+                        <a th:href="@{/}">
+                            主页
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md6">
+            <div sec:authorize="!isAuthenticated()">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        登录
+                    </div>
+                    <div class="layui-card-body">
+                        <button type="button" class="layui-btn layui-btn-primary">
+                            <a th:href="@{/toLogin}">
+                                登录
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div sec:authorize="isAuthenticated()">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        注销
+                    </div>
+                    <div class="layui-card-body">
+                        <button type="button" class="layui-btn layui-btn-primary">
+                            <a th:href="@{/logout}">
+                                注销
+                            </a>
+                        </button>
+                    </div>
+                    <div class="layui-card-body">
+                        <div sec:authorize="isAuthenticated()">
+                            username: <span sec:authentication="name"></span>
+                            role: <span sec:authentication="principal"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">标题</div>
+                <div class="layui-card-body">
+                    <div class="layui-form">
+                        <table class="layui-table">
+                            <colgroup>
+                                <col sec:authorize="hasRole('vip1')" width="150">
+                                <col sec:authorize="hasRole('vip2')" width="150">
+                                <col sec:authorize="hasRole('vip3')" width="150">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th sec:authorize="hasRole('vip1')">level1</th>
+                                <th sec:authorize="hasRole('vip2')">level2</th>
+                                <th sec:authorize="hasRole('vip3')">level3</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td sec:authorize="hasRole('vip1')"><a th:href="@{/level1/1}">1.html</a></td>
+                                <td sec:authorize="hasRole('vip2')"><a th:href="@{/level2/1}">1.html</a></td>
+                                <td sec:authorize="hasRole('vip3')"><a th:href="@{/level3/1}">1.html</a></td>
+                            </tr>
+                            <tr>
+                                <td sec:authorize="hasRole('vip1')"><a th:href="@{/level1/2}">2.html</a></td>
+                                <td sec:authorize="hasRole('vip2')"><a th:href="@{/level2/2}">2.html</a></td>
+                                <td sec:authorize="hasRole('vip3')"><a th:href="@{/level3/2}">2.html</a></td>
+                            </tr>
+                            <tr>
+                                <td sec:authorize="hasRole('vip1')"><a th:href="@{/level1/3}">3.html</a></td>
+                                <td sec:authorize="hasRole('vip2')"><a th:href="@{/level2/3}">3.html</a></td>
+                                <td sec:authorize="hasRole('vip3')"><a th:href="@{/level3/3}">3.html</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use(['element', 'layer'], function () {
+        var element = layui.element;
+        var layer = layui.layer;
+
+        //监听折叠
+        element.on('collapse(test)', function (data) {
+            layer.msg('展开状态：' + data.show);
+        });
+    });
+</script>
+</body>
+</html>

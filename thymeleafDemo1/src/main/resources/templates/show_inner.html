@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SpringBoot模版渲染</title>
+    <!--    <script type="text/javascript" th:src="@{/js/main.js}"></script>-->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+<p th:text="${#httpServletRequest.getRemoteAddr()}"></p>
+<p th:text="${#httpServletRequest.getAttribute('requestMessage')}"></p>
+<p th:text="${#httpSession.getId()}"></p>
+<p th:text="${#httpServletRequest.getServletContext().getRealPath('/')}"></p>
+<hr/>
+<p th:text="'url = ' + ${url}"></p>
+<p th:text="'sessionMessage = ' + ${session.sessionMessage}"></p>
+<p th:text="'applicationMessage = ' + ${application.applicationMessage}"></p>
+</body>
+</html>

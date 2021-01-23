@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>No.</td>
+        <td>UID</td>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>偶数</td>
+        <td>奇数</td>
+    </tr>
+    <tr th:each="user,userStat:${allUsers}">
+        <td th:text="${userStat.index + 1}"></td>
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.birthday}"></td>
+        <td th:text="${userStat.even}"></td>
+        <td th:text="${userStat.odd}"></td>
+    </tr>
+</table>
+<!--使用include才能把后面with里面的参数传到footer里面-->
+<div th:include="footer.html :: companyInfo" th:with="projectName='百度'"></div>
+</body>
+</html>

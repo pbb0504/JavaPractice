@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:object="${user}">
+    <p th:text="'用户name：'+ *{name}"></p>
+    <p th:text="'用户id：'+ *{id}"></p>
+    <p th:text="'用户sex：'+ *{sex}"></p>
+    <p th:text="'用户birthday：'+ *{birthday}"></p>
+    <hr/>
+    <p th:if="*{id lt 10}">
+        id 小于 10
+    </p>
+    <p th:else="*{id lt 10}">
+        id 大于 10
+    </p>
+    <p th:unless="*{name eq 'aaa'}">
+        你不是pbb
+    </p>
+    <p th:switch="*{id}">
+        <span th:case="100">uid为101的员工来了</span>
+        <span th:case="99">uid为102的员工来了</span>
+        <span th:case="*">没有匹配成功的数据！</span>
+    </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>No.</td>
+        <td>KEY</td>
+        <td>UID</td>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>偶数</td>
+        <td>奇数</td>
+    </tr>
+    <tr th:each="userEntry,userStat:${allUsers}">
+        <td th:text="${userStat.index + 1}"></td>
+        <td th:text="${userEntry.key}"></td>
+        <td th:text="${userEntry.value.id}"></td>
+        <td th:text="${userEntry.value.name}"></td>
+        <td th:text="${userEntry.value.birthday}"></td>
+        <td th:text="${userStat.even}"></td>
+        <td th:text="${userStat.odd}"></td>
+    </tr>
+</table>
+</body>
+</html>

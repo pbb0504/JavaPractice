@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+日期
+<p th:text="${#dates.format(date,'yyyy-MM-dd')}"></p>
+<p th:text="${#dates.format(date,'yyyy-MM-dd HH:mm:ss.SSS')}"></p>
+<hr/>
+strings
+<p th:text="${#strings.replace('www.baidu.com','.','$')}"></p>
+<p th:text="${#strings.toUpperCase('www.baidu.com')}"></p>
+<p th:text="${#strings.trim(' jjjjxxx   ')}"></p>
+<hr/>
+sets
+<p th:text="${#sets.contains(names,'username: 1')}"></p>
+<p th:text="${#sets.size(names)}"></p>
+<hr/>
+lists
+<p th:text="${#lists.size(ids)}"></p>
+</body>
+</html>
